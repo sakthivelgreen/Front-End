@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 * {
     margin: 0;
@@ -33,6 +34,16 @@
     max-width: 450px;
 }
 
+.form-header-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.form-header-section span {
+    line-height: 0.5;
+}
+
 .form-header-section h2 {
     font-weight: bold;
 }
@@ -45,11 +56,6 @@
 
 .form-body-section {
     margin: 15px 0px;
-}
-
-.form-container hr {
-    color: #c1c3c1;
-    margin-bottom: 5px;
 }
 
 .form-elements {
@@ -103,8 +109,9 @@
 }
 
 input[type='checkbox'] {
+    border: 1px solid #c1c3c1;
+    bottom: 0;
     cursor: pointer;
-    transform: scale(1.1)
 }
 
 a {
@@ -125,7 +132,6 @@ a {
     width: max-content;
     margin: 10px 0px;
     background-color: #F9F9F9;
-
 }
 
 .policy-div {
@@ -139,8 +145,13 @@ label {
 }
 
 small.error {
-    min-height: 0.8em;
-    font-size: 0.7em;
+    min-height: 14px;
+    font-size: 12px;
+    color: #ff0033;
+    max-width: 300px;
+    word-wrap: break-word;
+    white-space: pre-line;
+    display: block;
 }
 
 .recaptcha {
@@ -182,6 +193,13 @@ small.error {
     z-index: -1;
 }
 
+.image-container h3 {
+    font-family: "Bruno Ace", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px !important;
+}
+
 .image-content {
     display: flex;
     flex-direction: column;
@@ -194,7 +212,7 @@ small.error {
 }
 
 .image-text-content {
-    font-size: 14px;
+    /* font-size: 14px; */
     color: #c1c3c1;
 }
 
@@ -226,6 +244,9 @@ small.error {
 }
 
 #cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 5px;
     outline: none;
     border: none;
@@ -233,6 +254,18 @@ small.error {
     color: #fff;
     height: 35px;
     border-radius: 5px;
+}
+
+.form-submit-btn-div {
+    margin: 10px;
+}
+
+#cta-btn {
+    cursor: pointer;
+}
+
+#cta-btn:disabled {
+    background-color: #c1c3c1;
 }
 
 @media only screen and (min-width: 320px) {
@@ -251,6 +284,15 @@ small.error {
 }
 
 @media only screen and (min-width:768px) {
+    * {
+        font-size: 10px;
+        margin: 0 !important;
+    }
+
+    .form-submit-btn-div {
+        margin: 0 !important;
+    }
+
     .wrapper {
         width: 100vw;
         height: 100vh;
@@ -259,17 +301,20 @@ small.error {
         align-items: center;
     }
 
+
     .container {
         display: flex;
         flex-direction: row-reverse;
         gap: 1%;
-        width: 90%;
-        height: 95%;
+        width: 75%;
+        height: 85%;
+        max-height: 600px;
         padding: 1%;
     }
 
     .image-container {
         border-radius: 10px;
+        width: 50%;
     }
 
     .image-container::before {
@@ -277,38 +322,180 @@ small.error {
     }
 
     .image-content {
-        margin-top: 2em;
+        margin-top: 5em !important;
     }
 
-
-    .form-container {
-        padding: 1%;
+    .form-header-section {
+        /* max-height: 15%; */
+        /* flex: 1 1 auto; */
     }
 
-}
-
-@media only screen and (min-width:992px) {
-    .container {
-        width: 800px;
-        height: 480px;
-    }
-}
-
-@media only screen and (min-width:1200px) {
-    .container {
-        width: 1100px;
-        height: 600px;
-        justify-content: space-between;
+    .form-body-section {
+        max-height: 80%;
     }
 
-    .form-container {
+    .form-footer-section {
         flex: 1 1 auto;
+        min-height: 2em;
+        height: 10%;
+        max-height: 10%;
+        border-top: 1px solid #c1c3c1;
+        display: flex;
+        align-items: center;
+    }
+
+    .form-container {
+        width: 50%;
+        padding: 1%;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
+    .form-container .outer {
+        height: 100%;
+        padding: 0 1%;
+        gap: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .form-container h2 {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .form-header-section p {
+        font-size: 0.9em;
+        margin: 0.5em 0 !important;
+    }
+
+    .theme-ico-span {
+        display: inline-flex;
+        height: 15px;
+        width: 15px;
+    }
+
+    #switch-theme {
+        height: 100%;
+        width: 100%;
+        padding: 2px;
+    }
+
+    .form-elements {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+
+    label {
+        font-size: 0.8em;
+    }
+
+    .form-input {
+        max-width: 350px;
+        height: 2em;
+        padding: 0.5em 2em;
+        border-radius: 0.3em;
+    }
+
+    .input-container .icon {
+        left: 5px;
+        font-size: 1em;
+    }
+
+    .input-container .right-icon {
+        right: 5px;
+        font-size: 0.9em;
+    }
+
+    .form-input:focus {
+        outline: 1.5px solid #5667EC;
+    }
+
+    small.error {
+        min-height: 0.9em;
+        font-size: 0.7em;
+    }
+
+    .policy-div {
+        margin: 0.2em 0em !important;
+        gap: 0.5em;
+    }
+
+    .recaptcha-div {
+        margin: 0.5em 0 !important;
+        gap: 0.5em;
+    }
+
+    .recaptcha {
+        gap: 0.5em;
+    }
+
+    .recaptcha img {
+        height: 3em;
+        width: 3em;
+    }
+
+    #cta-btn {
+        margin: 1% 0em;
+        padding: 0.5em;
+        height: 2em;
+        border-radius: 0.3em;
+        width: 100%;
+    }
+
+    .form-submit-btn-div {
+        margin: 1em 0 !important;
+    }
+
+    #sign-in-redirect::after {
+        content: '\2192';
+        padding: 5px;
+        font-size: 1em;
+        transform: scale(1.5);
+    }
+
+    .image-title-content {
+        font-size: 30px !important;
+    }
+}
+
+@media only screen and (min-width:992px) {
+
+    .container {
+        padding: 0.5%;
+        width: 60%;
+        height: 85%;
+    }
+
+    .image-title-content {
+        font-size: 35px !important;
+    }
+}
+
+@media only screen and (min-width:1200px) {
+
+    * {
+        font-size: 11px !important;
+    }
+
+    .form-container .outer {
+        justify-content: flex-start;
+        gap: 0.5em;
+    }
+
+    .container {
+        width: 55%;
+        justify-content: space-between;
+    }
+
     .image-content {
         margin-top: 5em;
+    }
+
+    .form-header-section h2 {
+        font-size: 16px !important;
     }
 }

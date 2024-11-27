@@ -14,6 +14,7 @@
     <div class="wrapper">
         <div class="container">
             <div class="image-container">
+                <h3>&lt; / &gt; Decoder</h3>
                 <div class="image-content">
                     <h1 class="image-title-content">Don't Dream,<br /> Start Coding Today.</h1>
                     <p class="image-text-content">Make it happen! Bring Your Vision to Life,<br /> Build amazing things
@@ -36,9 +37,9 @@
             <div class="form-container">
                 <div class="outer">
                     <div class="form-header-section">
-                        <p><span class="theme-ico-span">
-                                <img src="../static/light-dark.png" alt="switch-theme" id="switch-theme">
-                            </span></p>
+                        <span class="theme-ico-span">
+                            <img src="../static/light-dark.png" alt="switch-theme" id="switch-theme">
+                        </span>
                         <h2>Join over 10 million <br /> students from around the globe</h2>
                         <p>Let's get started by filling out information below</p>
                     </div>
@@ -48,7 +49,8 @@
                                 <label for="email">Email</label>
                                 <div class="input-container">
                                     <i class="icon fa-solid fa-envelope"></i>
-                                    <input class="form-input" type="text" name="email" id="email" />
+                                    <input class="form-input" type="text" name="email" id="email"
+                                        autocomplete="email" />
                                 </div>
                                 <small class="error"></small>
                             </div>
@@ -56,7 +58,8 @@
                                 <label for="username">Username</label>
                                 <div class="input-container">
                                     <i class="icon fa-solid fa-user"></i>
-                                    <input class="form-input" type="text" name="username" id="username" />
+                                    <input class="form-input" type="text" name="username" id="username"
+                                        autocomplete="username" />
                                 </div>
                                 <small class="error"></small>
                             </div>
@@ -64,7 +67,8 @@
                                 <label for="password">Password</label>
                                 <div class="input-container">
                                     <i class="icon fa-solid fa-lock"></i>
-                                    <input class="form-input" type="password" name="password" id="password" />
+                                    <input class="form-input" type="password" name="password" id="password"
+                                        autocomplete="new-password" />
                                     <i class="right-icon fa-regular fa-eye" id="pass-show-ico"></i>
                                     <i class="right-icon fa-regular fa-eye-slash" id="pass-hide-ico"></i>
                                 </div>
@@ -75,7 +79,7 @@
                                 <div class="input-container">
                                     <i class="icon fa-solid fa-lock"></i>
                                     <input class="form-input" type="password" name="confirm-password"
-                                        id="confirm-password" />
+                                        id="confirm-password" autocomplete="new-password" />
                                     <i class="right-icon fa-regular fa-eye" id="con-pass-show-ico"></i>
                                     <i class="right-icon fa-regular fa-eye-slash" id="con-pass-hide-ico"></i>
                                 </div>
@@ -95,14 +99,13 @@
                                     <span><img src="../static/RecaptchaLogo.svg.png" alt="recaptcha"></span>
                                 </div>
                             </div>
-                            <div class="form-elements">
+                            <div class="form-submit-btn-div">
                                 <button type="submit" id="cta-btn">Next</button>
                             </div>
                         </form>
                     </div>
-                    <hr />
                     <div class="form-footer-section">
-                        <p>Already have an account? <a href="#" id="sign-in-redirect">Sign in</a></p>
+                        <span>Already have an account? <a href="#" id="sign-in-redirect">Sign in</a></span>
                     </div>
                 </div>
 
