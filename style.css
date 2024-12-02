@@ -113,7 +113,8 @@ body {
     right: 0;
     padding: 0px 10px;
     transform: scale(1.4);
-    display: none;
+    /* display: none; */
+    visibility: hidden;
 }
 
 .input-container .right-icon:hover {
