@@ -119,6 +119,11 @@ function setSuccess(item, msg) {
 }
 
 // Slider Code
+let FrameInterval;
+let index = 0;
+let duration = 5000;
+let imageInterval;
+let progressBar = document.querySelector('#progress1');
 
 let normalContent = document.querySelector('#content1')
 const sliderContent = document.querySelector('#content-slide');
@@ -138,23 +143,27 @@ close_slide.addEventListener('click', (e) => {
     normalContent.parentElement.classList.remove('video')
     normalContent.style.display = 'block';
     sliderContent.style.display = 'none';
+    clearInterval(imageInterval);
+    clearInterval(FrameInterval);
+    progressBar.style.width = '0%';
 })
-let index = 0;
-let imageInterval;
+
 document.querySelector('#slides').addEventListener('click', (e) => {
     e.preventDefault();
     clearInterval(imageInterval);
+    clearInterval(FrameInterval);
+    progressBar.style.width = '0%';
     changeImage();
     animation();
 })
 
 function animation() {
-    imageInterval = setInterval(changeImage, 5000)
+    imageInterval = setInterval(changeImage, duration)
 }
 function changeImage() {
     let src = [
         './static/2.jpg',
-        './static/4jpg',
+        './static/4.jpg',
         './static/5.jpg',
         './static/6.jpg',
         './static/1.jpg',
@@ -173,22 +182,24 @@ function changeImage() {
     }, 500);
 }
 
-function move(i = 0) {
-    if (i == 0) {
-        i = 1;
-        var elem = document.querySelector('#progress1');
-        var width = 0;
-        var totalDuration = 5000;
-        var stepTime = totalDuration / 100;
-        var id = setInterval(frame, stepTime);
-        function frame() {
-            if (width >= 100) {
-                clearInterval(id);
-                i = 0;
-            } else {
-                width++;
-                elem.style.width = width + "%";
-            }
+function move() {
+    let width = 0;
+    let stepTime = duration / 100;
+    if (FrameInterval) {
+        clearInterval(FrameInterval); // Prevent multiple intervals
+    }
+    FrameInterval = setInterval(frame, stepTime);
+
+    // increase Width
+    function frame() {
+        if (width >= 100) {
+            clearInterval(FrameInterval);
+            progressBar.style.width = '0%';
+        } else {
+            width++;
+            progressBar.style.width = width + "%";
         }
     }
+
 }
+
