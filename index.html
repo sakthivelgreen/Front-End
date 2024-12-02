@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="image-container">
+                <div id="content1">
+                    <h3>&lt; / &gt; Decoder</h3>
+                    <div class="image-content">
+                        <h1 class="image-title-content">Don't Dream,<br /> Start Coding Today.</h1>
+                        <p class="image-text-content">Make it happen! Bring Your Vision to Life,<br /> Build amazing
+                            things
+                            with
+                            us.</p>
+                        <div>
+                            <button id="watch-demo">
+                                <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M18.1579 8.60503C20.614 10.1139 20.614 13.8861 18.1579 15.395L11.5263 19.4689C9.07017 20.9778 6 19.0917 6 16.074L6 7.92602C6 4.90827 9.07018 3.02218 11.5263 4.53105L18.1579 8.60503Z"
+                                        stroke="#fff" stroke-width="1.5" />
+                                </svg>
+                                Watch Demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="content-slide">
+                    <span id="close-slide"><img src="./static/cross-svgrepo-com.svg" alt="close"></span>
+                    <div class="progress-bars">
+                        <div id="bar1" class="bar">
+                            <div id="progress1"></div>
+                        </div>
+                    </div>
+                    <div id="slides">
+                        <img id='slide' src="./static/pexels-bertellifotografia-29509538.jpg" alt="slides"
+                            class="active">
+                    </div>
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="outer">
+                    <div class="form-header-section">
+                        <span class="theme-ico-span">
+                            <img src="./static/light-dark.png" alt="switch-theme" id="switch-theme">
+                        </span>
+                        <h2 aria-label="signup page title">Join over 10 million <br /> students from around the globe
+                        </h2>
+                        <p>Let's get started by filling out information below</p>
+                    </div>
+                    <div class="form-body-section">
+                        <form method="post">
+                            <div class="form-elements">
+                                <label for="email">Email</label>
+                                <div class="input-container">
+                                    <i class="icon fa-solid fa-envelope"></i>
+                                    <input class="form-input" type="text" name="email" id="email"
+                                        aria-label="Enter Your Email ID" autocomplete="email" />
+                                </div>
+                                <span class="error"></span>
+                            </div>
+                            <div class="form-elements">
+                                <label for="username">Username</label>
+                                <div class="input-container">
+                                    <i class="icon fa-solid fa-user"></i>
+                                    <input class="form-input" type="text" name="username" id="username"
+                                        aria-label="Choose a Username" autocomplete="username" />
+                                </div>
+                                <span class="error"></span>
+                            </div>
+                            <div class="form-elements">
+                                <label for="password">Password</label>
+                                <div class="input-container">
+                                    <i class="icon fa-solid fa-lock"></i>
+                                    <input class="form-input" type="password" name="password" id="password"
+                                        aria-describedby="password-tooltip" aria-label="Choose a Password"
+                                        autocomplete="new-password" />
+                                    <i class="right-icon fa-regular fa-eye" id="pass-show-ico"></i>
+                                    <i class="right-icon fa-regular fa-eye-slash" id="pass-hide-ico"></i>
+                                </div>
+                                <div id="password-tooltip" style="display: none;">
+                                    Password should contain minimum 8 characters and,
+                                    At least one Capital letter and,
+                                    At least one Small letter and,
+                                    At least one number and,
+                                    At least one symbol.
+                                </div>
+                                <span class="error"></span>
+                            </div>
+                            <div class="form-elements">
+                                <label for="confirm-password">Confirm Password</label>
+                                <div class="input-container">
+                                    <i class="icon fa-solid fa-lock"></i>
+                                    <input class="form-input" type="password" name="confirm-password"
+                                        aria-label="Confirm the Password" id="confirm-password"
+                                        autocomplete="new-password" />
+                                    <i class="right-icon fa-regular fa-eye" id="con-pass-show-ico"></i>
+                                    <i class="right-icon fa-regular fa-eye-slash" id="con-pass-hide-ico"></i>
+                                </div>
+                                <span class="error"></span>
+                            </div>
+                            <div class="policy-div">
+                                <input type="checkbox" name="confirm-policy" id="confirm-policy"
+                                    aria-label="Agree with Privacy Policy">
+                                <label for="confirm-policy">I agree with Decode's <a href="#"
+                                        id="terms-redirect">Terms</a>
+                                    and <a href="#" id="policy-redirect">Privacy
+                                        Policy</a></label>
+                            </div>
+                            <div class="recaptcha-div">
+                                <div class="recaptcha">
+                                    <span><input type="checkbox" name="not-a-robot" id="not-a-robot"></span>
+                                    <span><label for="not-a-robot">I'm not a robot</label></span>
+                                    <span><img src="./static/RecaptchaLogo.svg.png" alt="recaptcha"></span>
+                                </div>
+                            </div>
+                            <div class="form-submit-btn-div">
+                                <button type="submit" id="cta-btn" aria-label="Click to signup account">Next</button>
+                            </div>
+                        </form>
+                    </div>
+                    <hr />
+                    <div class="form-footer-section">
+                        <span>Already have an account? <a href="#" id="sign-in-redirect"
+                                aria-label="Already have an account Click here.">Sign in</a></span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
